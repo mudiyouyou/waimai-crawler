@@ -1,0 +1,34 @@
+{
+  "log": {
+    "level": "DEBUG"
+  },
+  "mail": {
+    "from": "company@wodi01.com",
+    "mailTo": "shuju@wodi01.com",
+    "host":"smtp.wodi01.com",
+    "port":25,
+    "secure":false,
+    "user":"company@wodi01.com",
+    "pass":"Wodi518!"
+  },
+  "account": [
+    {
+      "name": "美团东大桥店",
+      "username": "wdhg5",
+      "password": "wodi123",
+      "type": "meituan"
+    },
+    {
+      "name": "饿了么东大桥店",
+      "username": "sltwdhg",
+      "password": "wdgh123",
+      "type": "eleme"
+    },
+    {
+      "name": "百度东大桥店",
+      "username": "wdhg_01",
+      "password": "wodi1234",
+      "type": "baidu"
+    }
+  ]
+}
