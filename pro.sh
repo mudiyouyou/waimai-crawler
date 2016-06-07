@@ -1,0 +1,1 @@
+sudo NODE_ENV=production pm2 start index.js -i 1 -n "crawler"
