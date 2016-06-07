@@ -30,3 +30,4 @@ function fetchTask(){
 later.date.localTime();
 let schedule = later.parse.recur().on(6).hour();
 later.setInterval(fetchTask,schedule);
+logger.info('Waimai Crawler is running');
