@@ -27,7 +27,6 @@ function fetchTask(){
         logger.error(err);
     });
 }
-//later.date.localTime();
-//let schedule = later.parse.recur().on(6).hour();
-//later.setInterval(fetchTask,schedule);
-fetchTask();
+later.date.localTime();
+let schedule = later.parse.recur().on(6).hour();
+later.setInterval(fetchTask,schedule);
