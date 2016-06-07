@@ -3,13 +3,13 @@
     "level": "DEBUG"
   },
   "mail": {
-    "from": "di.mu@wodi01.com",
-    "mailTo": "guorui.zhang@wodi01.com",
+    "from": "company@wodi01.com",
+    "mailTo": "shuju@wodi01.com",
     "host":"smtp.wodi01.com",
     "port":25,
     "secure":false,
-    "user":"di.mu@wodi01.com",
-    "pass":"Admin518#"
+    "user":"company@wodi01.com",
+    "pass":"Wodi518!"
   },
   "account": [
     {

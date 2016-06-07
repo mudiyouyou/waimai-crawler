@@ -8,19 +8,19 @@ const config = require('config');
 const _ = require('underscore');
 const accounts = config.get('account');
 let tasks = [];
-let beforeDays = 0;
+let beforeDays = -1;
 _.each(accounts, function (account) {
     switch (account.type) {
         case 'meituan':
             tasks.push(meituan.run(account,beforeDays));
             break;
         case 'eleme':
-            //tasks.push(eleme.run(account,beforeDays));
+            tasks.push(eleme.run(account,beforeDays));
             break;
     }
 });
 promise.all(tasks).then(function (files) {
-    //mail.sendMail(beforeDays,files);
+    mail.sendMail(beforeDays,files);
 }).catch(function (err) {
     logger.error(err);
 });
