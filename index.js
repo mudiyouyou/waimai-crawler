@@ -10,7 +10,7 @@ const accounts = config.get('account');
 const later = require('later');
 function fetchTask(){
     let tasks = [];
-    let beforeDays = 1;
+    let beforeDays = 15;
     _.map(accounts, function (account) {
         switch (account.type) {
             case 'meituan':
