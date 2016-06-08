@@ -25,6 +25,18 @@
       "type": "eleme"
     },
     {
+      "name": "美团望京店",
+      "username": "wmwdhg76412",
+      "password": "wodi1234",
+      "type": "meituan"
+    },
+    {
+      "name": "饿了么望京店",
+      "username": "18801435591_eleme",
+      "password": "a9b123",
+      "type": "eleme"
+    },
+    {
       "name": "百度东大桥店",
       "username": "wdhg_01",
       "password": "wodi1234",
