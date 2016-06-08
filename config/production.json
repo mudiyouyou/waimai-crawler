@@ -4,7 +4,7 @@
   },
   "mail": {
     "from": "company@wodi01.com",
-    "mailTo": "shuju@wodi01.com",
+    "mailTo": "shuju@wodi01.com,di.mu@wodi01.com",
     "host":"smtp.wodi01.com",
     "port":25,
     "secure":false,
