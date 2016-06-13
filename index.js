@@ -1,5 +1,6 @@
 const meituan = require('./lib/meituan');
 const eleme = require('./lib/eleme');
+const baidu = require('./lib/baidu');
 const mail = require('./lib/mail');
 const logger = require('./lib/logger');
 const promise = require('bluebird');
@@ -8,7 +9,7 @@ const config = require('config');
 const _ = require('underscore');
 const accounts = config.get('account');
 const later = require('later');
-function fetchTask(){
+function fetchTask() {
     let tasks = [];
     let beforeDays = 1;
     _.map(accounts, function (account) {
@@ -19,16 +20,19 @@ function fetchTask(){
             case 'eleme':
                 tasks.push(eleme.run(account, beforeDays));
                 break;
+            case "baidu":
+                tasks.push(baidu.run(account,beforeDays));
+                break;
         }
     });
     promise.all(tasks).then(function (files) {
-        mail.sendMail(beforeDays, files);
+        //mail.sendMail(beforeDays, files);
     }).catch(function (err) {
         logger.error(err);
     });
 }
-later.date.localTime();
-let schedule = later.parse.recur().on(6).hour();
-later.setInterval(fetchTask,schedule);
-//fetchTask();
+//later.date.localTime();
+//let schedule = later.parse.recur().on(6).hour();
+//later.setInterval(fetchTask,schedule);
+fetchTask();
 logger.info('Waimai Crawler is running');

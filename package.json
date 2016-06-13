@@ -31,7 +31,12 @@
     "moment": "^2.13.0",
     "nodemailer": "^2.4.2",
     "request": "^2.72.0",
+    "tough-cookie": "^2.2.2",
     "underscore": "^1.8.3",
     "uuid": "^2.0.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "rewire": "^2.5.1"
   }
 }
