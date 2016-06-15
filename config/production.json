@@ -1,10 +1,10 @@
 {
   "log": {
-    "level": "DEBUG"
+    "level": "INFO"
   },
   "mail": {
     "from": "company@wodi01.com",
-    "mailTo": "shuju@wodi01.com,di.mu@wodi01.com",
+    "mailTo": "report@wodi01.com,di.mu@wodi01.com",
     "host":"smtp.wodi01.com",
     "port":25,
     "secure":false,
@@ -19,16 +19,16 @@
       "type": "meituan"
     },
     {
-      "name": "饿了么东大桥店",
-      "username": "sltwdhg",
-      "password": "wdgh123",
-      "type": "eleme"
-    },
-    {
       "name": "美团望京店",
       "username": "wmwdhg76412",
       "password": "wodi1234",
       "type": "meituan"
+    },
+    {
+      "name": "饿了么东大桥店",
+      "username": "sltwdhg",
+      "password": "wdgh123",
+      "type": "eleme"
     },
     {
       "name": "饿了么望京店",
@@ -40,6 +40,12 @@
       "name": "百度东大桥店",
       "username": "wdhg_01",
       "password": "wodi1234",
+      "type": "baidu"
+    },
+    {
+      "name": "百度东大桥店",
+      "username": "wdhgwjd",
+      "password": "Wodi1234",
       "type": "baidu"
     }
   ]
