@@ -1,1 +1,1 @@
-#crawler
+#waimai-crawler
