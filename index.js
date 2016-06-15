@@ -1,28 +1,25 @@
-const meituan = require('./lib/meituan');
-const eleme = require('./lib/eleme');
-const baidu = require('./lib/baidu');
+const ElemeTask = require('./lib/eleme_task');
+const BaiduTask = require('./lib/baidu_task');
+const MeituanTask = require('./lib/meituan_task');
 const mail = require('./lib/mail');
 const logger = require('./lib/logger');
 const promise = require('bluebird');
 const moment = require('moment');
 const config = require('config');
-const _ = require('underscore');
 const accounts = config.get('account');
 const later = require('later');
+
 function fetchTask() {
-    let tasks = [];
-    let beforeDays = 1;
-    _.map(accounts, function (account) {
+    let beforeDays = 15;
+    let tasks = accounts.map(function (account) {
         switch (account.type) {
-            case 'meituan':
-                tasks.push(meituan.run(account, beforeDays));
-                break;
-            case 'eleme':
-                tasks.push(eleme.run(account, beforeDays));
-                break;
+            //case 'meituan':
+            //    return new MeituanTask(account).run(beforeDays);
+            //case 'eleme':
+            //    return new ElemeTask(account).run(beforeDays);
+            //    break;
             case "baidu":
-                tasks.push(baidu.run(account,beforeDays));
-                break;
+                return new BaiduTask(account).run(beforeDays);
         }
     });
     promise.all(tasks).then(function (files) {
