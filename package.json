@@ -21,16 +21,15 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.4.0",
-    "cheerio": "^0.20.0",
     "config": "^1.20.4",
     "csv-stringify": "^1.0.4",
     "geolib": "^2.0.21",
-    "jsdom": "^9.2.1",
     "later": "^1.2.0",
     "log4js": "^0.6.36",
     "moment": "^2.13.0",
     "nodemailer": "^2.4.2",
     "request": "^2.72.0",
+    "thunkify": "^2.1.2",
     "tough-cookie": "^2.2.2",
     "underscore": "^1.8.3",
     "uuid": "^2.0.2"

@@ -10,25 +10,25 @@ const accounts = config.get('account');
 const later = require('later');
 
 function fetchTask() {
-    let beforeDays = 1;
+    let option = {beforeDays:1};
     let tasks = accounts.map((account)=> {
         switch (account.type) {
             case 'meituan':
-                return new MeituanTask(account).run(beforeDays);
+                return new MeituanTask(account,option).run();
             case 'eleme':
-                return new ElemeTask(account).run(beforeDays);
+                return new ElemeTask(account,option).run();
             case "baidu":
-                return new BaiduTask(account).run(beforeDays);
+                return new BaiduTask(account,option).run();
         }
     });
     promise.all(tasks).then((files)=>{
-        mail.sendMail(beforeDays, files);
+        //mail.sendMail(beforeDays, files);
     }).catch((err)=>{
         logger.error(err);
     });
 }
 later.date.localTime();
-let schedule = later.parse.recur().on(6).hour();
-later.setInterval(fetchTask,schedule);
-//fetchTask();
+//let schedule = later.parse.recur().on(6).hour();
+//later.setInterval(fetchTask,schedule);
+fetchTask();
 logger.info('Waimai Crawler is running');

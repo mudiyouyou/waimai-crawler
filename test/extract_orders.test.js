@@ -5,6 +5,7 @@ const expect = require('chai').expect;
 const fs = require('fs');
 const rewire = require('rewire');
 const BaiduTask = require('../lib/baidu_task');
+const util = require('../lib/util');
 describe('Fetch Baidu order',()=>{
     it('Extract json from html',(done)=>{
         fs.readFile('test/order_from_baidu.html',(err,data)=>{
@@ -20,5 +21,8 @@ describe('Fetch Baidu order',()=>{
             expect(pageNum).to.equal(3);
             done();
         });
+    });
+    it('Encrypt baidu password before submit',()=>{
+        expect(util.encryptBaiduPwd('Wodi1234')).to.equal('QzMyETak92V');
     });
 });
