@@ -22,13 +22,13 @@ function fetchTask() {
         }
     });
     promise.all(tasks).then((files)=>{
-        //mail.sendMail(beforeDays, files);
+        mail.sendMail(option, files);
     }).catch((err)=>{
         logger.error(err);
     });
 }
 later.date.localTime();
-//let schedule = later.parse.recur().on(6).hour();
-//later.setInterval(fetchTask,schedule);
-fetchTask();
+let schedule = later.parse.recur().on(6).hour();
+later.setInterval(fetchTask,schedule);
+//fetchTask();
 logger.info('Waimai Crawler is running');
