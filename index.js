@@ -10,20 +10,25 @@ const accounts = config.get('account');
 const later = require('later');
 
 function fetchTask() {
-    let option = {beforeDays:1};
-    let tasks = accounts.map((account)=> {
+    let option = {beforeDays: 1};
+    let tasks = [];
+    accounts.forEach((account)=> {
         switch (account.type) {
             case 'meituan':
-                return new MeituanTask(account,option).run();
+                tasks.push(new MeituanTask(account, option).run());
+                break;
             case 'eleme':
-                return new ElemeTask(account,option).run();
+                tasks.push(new ElemeTask(account,option).run());
+                break;
             case "baidu":
-                return new BaiduTask(account,option).run();
+                tasks.push(new BaiduTask(account,option).run());
+                break;
         }
     });
-    promise.all(tasks).then((files)=>{
+    promise.all(tasks).then((files)=> {
+        logger.info('Will send files :' + files);
         mail.sendMail(option, files);
-    }).catch((err)=>{
+    }).catch((err)=> {
         logger.error(err);
     });
 }
