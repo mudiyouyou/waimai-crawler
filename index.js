@@ -9,7 +9,7 @@ const config = require('config');
 const accounts = config.get('account');
 const later = require('later');
 
-function fetchTask() {
+function startFetch() {
     let option = {beforeDays: 1};
     let tasks = [];
     accounts.forEach((account)=> {
@@ -34,6 +34,5 @@ function fetchTask() {
 }
 later.date.localTime();
 let schedule = later.parse.recur().on(6).hour();
-later.setInterval(fetchTask,schedule);
-//fetchTask();
+later.setInterval(startFetch,schedule);
 logger.info('Waimai Crawler is running');
