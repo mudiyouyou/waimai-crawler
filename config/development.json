@@ -3,52 +3,34 @@
     "level": "DEBUG"
   },
   "mail": {
-    "from": "company@wodi01.com",
-    "mailTo": "di.mu@wodi01.com",
-    "host":"smtp.wodi01.com",
+    "from": "company@xxx.com", //邮件发送人
+    "mailTo": "di.mu@xxx.com", //邮件接收人
+    "host":"smtp.xxx.com",
     "port":25,
     "secure":false,
-    "user":"company@wodi01.com",
-    "pass":"Wodi518!"
+    "user":"company@xxx.com",  //程序使用的邮件
+    "pass":"程序使用的邮件的密码"
   },
   "imgCode":{
-    "key":"bdfac190b1bec17e7e8a98c4becd996a"
+    "key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"   // https://www.juhe.cn/docs/api/id/60  识别验证码api的key
   },
   "account": [
     {
-      "name": "美团东大桥店",
-      "username": "wdhg5",
-      "password": "wodi123",
+      "name": "美团xxx店",
+      "username": "帐户名",
+      "password": "账户密码",
       "type": "meituan"
     },
     {
-      "name": "美团望京店",
-      "username": "wmwdhg76412",
-      "password": "wodi1234",
-      "type": "meituan"
-    },
-    {
-      "name": "饿了么东大桥店",
-      "username": "sltwdhg",
-      "password": "wdgh123",
+      "name": "饿了么xxx店",
+      "username": "帐户名",
+      "password": "账户密码",
       "type": "eleme"
     },
     {
-      "name": "饿了么望京店",
-      "username": "18801435591_eleme",
-      "password": "a9b123",
-      "type": "eleme"
-    },
-    {
-      "name": "百度东大桥店",
-      "username": "wdhg_01",
-      "password": "wodi1234",
-      "type": "baidu"
-    },
-    {
-      "name": "百度望京店",
-      "username": "wdhgwjd",
-      "password": "Wodi1234",
+      "name": "百度xxx店",
+      "username": "帐户名",
+      "password": "账户密码",
       "type": "baidu"
     }
   ]
